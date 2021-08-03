@@ -12,4 +12,3 @@ FROM nginx:alpine
 # Copy from the stage 1
 COPY --from=builder /app-ui/build /usr/share/nginx/html
 EXPOSE 80
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
