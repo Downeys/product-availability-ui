@@ -7,7 +7,7 @@ pipeline {
                 git branch: 'main', credentialsId: 'GITHUB_CREDENTIALS', url: 'https://github.com/Downeys/product-availability-ui.git'
             }
         }
-        stage('Clean Build') {
+        stage('Build') {
             steps {
                 nodejs('NodeJS-16.6.1'){
                     sh "npm run build"
