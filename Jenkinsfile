@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 nodejs('NodeJS-16.6.1'){
+                    sh "npm install"
                     sh "npm run build"
                 }
             }
