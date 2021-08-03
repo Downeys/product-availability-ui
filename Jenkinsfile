@@ -38,6 +38,7 @@ pipeline {
     post {
         always {
             // Cleans the workspace - so Jenkins will run fast and efficiently
+            sh 'docker image prune -f'
             cleanWs()
         }
     }
