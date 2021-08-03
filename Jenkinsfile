@@ -35,4 +35,10 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            // Cleans the workspace - so Jenkins will run fast and efficiently
+            cleanWs()
+        }
+    }
 }
