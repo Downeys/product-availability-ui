@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bcpa-ui
+  name: bcpa-ui-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bcpa-ui
+  template:
+    metadata:
+      labels:
+        app: bcpa-ui
+    spec:
+      containers:
+        - image: downeys/bcpa-ui
+          name: bcpa-ui
+          ports:
+            - name: bcpa-ui
+              containerPort: 8080
+---
+#Node Port Service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: bcpa-ui
+  name: bcpa-ui
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    name: bcpa-ui
