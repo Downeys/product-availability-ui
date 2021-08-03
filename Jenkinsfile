@@ -11,7 +11,7 @@ pipeline {
             steps {
                 withGradle(){
                     nodejs('NodeJS-16.6.1'){
-                        sh "npm build"
+                        sh "npm run build"
                     }
                 }
             }
