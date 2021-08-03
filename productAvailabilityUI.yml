@@ -19,7 +19,7 @@ spec:
           name: bcpa-ui
           ports:
             - name: bcpa-ui
-              containerPort: 8081
+              containerPort: 8080
 ---
 #Node Port Service
 apiVersion: v1
@@ -31,7 +31,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8081
-      targetPort: 8081
+    - port: 8080
+      targetPort: 8080
   selector:
     name: bcpa-ui
