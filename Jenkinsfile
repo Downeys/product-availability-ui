@@ -9,10 +9,8 @@ pipeline {
         }
         stage('Clean Build') {
             steps {
-                withGradle(){
-                    nodejs('NodeJS-16.6.1'){
-                        sh "npm run build"
-                    }
+                nodejs('NodeJS-16.6.1'){
+                    sh "npm run build"
                 }
             }
         }
