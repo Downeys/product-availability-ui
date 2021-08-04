@@ -34,4 +34,4 @@ spec:
     - port: 80
       targetPort: 80
   selector:
-    name: bcpa-ui
+    app: bcpa-ui
